@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 const MenuDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex justify-center my-auto lg:hidden">
+    <div className="flex sticky top-0 justify-center my-auto lg:hidden">
       <div>
         <div className="dropend relative">
           <button
             className="
           dropdown-toggle
-          px-6
+          px-2
           py-2.5
-          bg-black
+          bg-gray-900
           text-white
           font-medium
           text-xs
@@ -47,7 +47,7 @@ const MenuDropdown = () => {
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
               />
             </svg>
@@ -89,8 +89,9 @@ const MenuDropdown = () => {
               text-white
               hover:bg-white
               hover:text-black
+              cursor-pointer
             "
-                href="/"
+                onClick={() => setIsOpen(false)}
               >
                 INICIO
               </a>
@@ -110,8 +111,10 @@ const MenuDropdown = () => {
               text-white
               hover:bg-white
               hover:text-black
+              cursor-pointer
+              cursor-pointer
             "
-                href="/nosotros"
+                onClick={() => setIsOpen(false)}
               >
                 NOSOTROS
               </a>
@@ -131,8 +134,9 @@ const MenuDropdown = () => {
               text-white
               hover:bg-white
               hover:text-black
+              cursor-pointer
             "
-                href="/horarios"
+                onClick={() => setIsOpen(false)}
               >
                 HORARIOS
               </a>
@@ -152,8 +156,9 @@ const MenuDropdown = () => {
               text-white
               hover:bg-white
               hover:text-black
+              cursor-pointer
             "
-                href="/equipo"
+                onClick={() => setIsOpen(false)}
               >
                 EQUIPO
               </a>
@@ -173,8 +178,9 @@ const MenuDropdown = () => {
               text-white
               hover:bg-white
               hover:text-black
+              cursor-pointer
             "
-                href="/servicios"
+                onClick={() => setIsOpen(false)}
               >
                 SERVICIOS
               </a>
@@ -194,8 +200,9 @@ const MenuDropdown = () => {
               text-white
               hover:bg-white
               hover:text-black
+              cursor-pointer
             "
-                href="/galeria"
+                onClick={() => setIsOpen(false)}
               >
                 GALERÍA
               </a>
@@ -215,8 +222,9 @@ const MenuDropdown = () => {
               text-white
               hover:bg-white
               hover:text-black
+              cursor-pointer
             "
-                href="/contaco"
+                onClick={() => setIsOpen(false)}
               >
                 CONTACTO
               </a>
