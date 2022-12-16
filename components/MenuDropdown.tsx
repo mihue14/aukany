@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 
 const MenuDropdown = () => {
@@ -111,7 +111,6 @@ const MenuDropdown = () => {
               text-white
               hover:bg-white
               hover:text-black
-              cursor-pointer
               cursor-pointer
             "
                 onClick={() => setIsOpen(false)}
