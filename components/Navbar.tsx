@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`flex justify-around w-full h-full sticky z-50 top-0 bg-black ${
+      className={`flex justify-around w-full h-24 z-10 sticky top-0 bg-black ${
         scrollY < 200 ? "bg-opacity-100" : "bg-opacity-80"
       }`}
     >
