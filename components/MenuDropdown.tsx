@@ -1,8 +1,17 @@
 import React from "react";
 import { useState } from "react";
+import Scroll from "react-scroll";
 
 const MenuDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const handleScroll = (id: string, p: number) => {
+    Scroll.scroller.scrollTo(id, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: p,
+    });
+  };
 
   return (
     <div className="flex sticky top-0 justify-center my-auto lg:hidden">
@@ -93,7 +102,15 @@ const MenuDropdown = () => {
               hover:text-black
               cursor-pointer
             "
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false),
+                    Scroll.animateScroll.scrollToTop({
+                      duration: 1500,
+                      delay: 100,
+                      smooth: true,
+                      offset: 50,
+                    });
+                }}
               >
                 INICIO
               </a>
@@ -116,7 +133,9 @@ const MenuDropdown = () => {
               hover:text-black
               cursor-pointer
             "
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false), handleScroll("1", -120);
+                }}
               >
                 NOSOTROS
               </a>
@@ -139,7 +158,9 @@ const MenuDropdown = () => {
               hover:text-black
               cursor-pointer
             "
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false), handleScroll("2", -95);
+                }}
               >
                 HORARIOS
               </a>
@@ -162,7 +183,9 @@ const MenuDropdown = () => {
               hover:text-black
               cursor-pointer
             "
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false), handleScroll("3", -95);
+                }}
               >
                 EQUIPO
               </a>
@@ -185,7 +208,9 @@ const MenuDropdown = () => {
               hover:text-black
               cursor-pointer
             "
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false), handleScroll("4", -95);
+                }}
               >
                 SERVICIOS
               </a>
@@ -208,7 +233,9 @@ const MenuDropdown = () => {
               hover:text-black
               cursor-pointer
             "
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false), handleScroll("5", -135);
+                }}
               >
                 GALERÍA
               </a>
@@ -231,7 +258,9 @@ const MenuDropdown = () => {
               hover:text-black
               cursor-pointer
             "
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false), handleScroll("6", 0);
+                }}
               >
                 CONTACTO
               </a>
