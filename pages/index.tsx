@@ -5,6 +5,9 @@ import AboutUsComponent from "../components/AboutUs";
 import ScheduleComponent from "../components/Schedule";
 import TeamComponent from "../components/Team";
 import ServicesComponent from "../components/Services";
+import GalleryComponent from "../components/Gallery";
+import ContactComponent from "../components/Contact";
+import FooterComponent from "../components/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +18,9 @@ export default function Home() {
       <ScheduleComponent />
       <TeamComponent />
       <ServicesComponent />
+      <GalleryComponent />
+      <ContactComponent />
+      <FooterComponent />
     </div>
   );
 }
