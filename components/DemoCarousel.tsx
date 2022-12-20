@@ -17,17 +17,17 @@ const DemoCarousel = () => {
       interval={2500}
       swipeScrollTolerance={30}
       preventMovementUntilSwipeScrollTolerance
-      className="w-screen -ml-10 lg:-ml-[3.6em] mt-10 lg:w-[80%] lg:translate-x-[20%] lg:mt-20"
+      className="lg:w-[82.8%] lg:mx-auto"
     >
-      <div className="h-full w-full lg:max-h-[45em]">
+      <div className="lg:h-[45em]">
         <img src={barber1.src} alt="barber" className="h-full w-full" />
         <p className="legend">Lionel Messi - Fundador</p>
       </div>
-      <div className="h-full w-full lg:max-h-[45em]">
+      <div className="lg:h-[45em]">
         <img src={barber2.src} alt="barber" className="h-full w-full" />
         <p className="legend">Enzo Fernández - Barbero</p>
       </div>
-      <div className="h-full w-full lg:max-h-[45em]">
+      <div className="lg:h-[45em]">
         <img src={barber3.src} alt="barber" className="h-full w-full" />
         <p className="legend">Julián Álvarez - Barbero</p>
       </div>
