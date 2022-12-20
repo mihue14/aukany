@@ -30,6 +30,7 @@ const MenuDropdown = () => {
           flex
           items-center
           whitespace-nowrap
+          md:text-xl
         "
             type="button"
             id="dropdownMenuButton1e"
@@ -43,7 +44,7 @@ const MenuDropdown = () => {
               width="16"
               height="16"
               fill="currentColor"
-              className="bi bi-list"
+              className="bi bi-list md:h-5 w-5"
               viewBox="0 0 16 16"
             >
               <path
@@ -79,6 +80,7 @@ const MenuDropdown = () => {
                 className="
               dropdown-item
               text-sm
+              md:text-base
               py-2
               px-4
               font-normal
@@ -101,6 +103,7 @@ const MenuDropdown = () => {
                 className="
               dropdown-item
               text-sm
+              md:text-base
               py-2
               px-4
               font-normal
@@ -123,6 +126,7 @@ const MenuDropdown = () => {
                 className="
               dropdown-item
               text-sm
+              md:text-base
               py-2
               px-4
               font-normal
@@ -145,6 +149,7 @@ const MenuDropdown = () => {
                 className="
               dropdown-item
               text-sm
+              md:text-base
               py-2
               px-4
               font-normal
@@ -167,6 +172,7 @@ const MenuDropdown = () => {
                 className="
               dropdown-item
               text-sm
+              md:text-base
               py-2
               px-4
               font-normal
@@ -189,6 +195,7 @@ const MenuDropdown = () => {
                 className="
               dropdown-item
               text-sm
+              md:text-base
               py-2
               px-4
               font-normal
@@ -211,6 +218,7 @@ const MenuDropdown = () => {
                 className="
               dropdown-item
               text-sm
+              md:text-base
               py-2
               px-4
               font-normal
