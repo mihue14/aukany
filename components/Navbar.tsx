@@ -23,7 +23,7 @@ const Navbar = () => {
       <img src={logo.src} alt="logo" className="h-auto w-auto lg:hidden" />
       <a
         href="/reservar"
-        className="my-auto text-white p-1 rounded-md bg-black lg:hidden hover:bg-white hover:text-black transition-all duration-500"
+        className="my-auto text-white p-1 rounded-md bg-black lg:hidden hover:bg-white hover:text-black transition-all duration-500 md:text-xl"
       >
         ¡RESERVAR!
       </a>
