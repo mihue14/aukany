@@ -2,9 +2,9 @@ import React from "react";
 import schedule from "../assets/schedule.png";
 import { Flathead } from "../fonts";
 
-const Schedule = () => {
+const Schedule = ({ id }: { id: string }) => {
   return (
-    <div className="bg-black p-10 rounded-md mt-10 text-center">
+    <div className="bg-black p-10 rounded-md mt-10 text-center" id={id}>
       <img
         src={schedule.src}
         alt="schedule"
