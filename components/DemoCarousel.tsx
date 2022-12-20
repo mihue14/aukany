@@ -8,6 +8,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const DemoCarousel = () => {
   return (
     <Carousel
+      autoPlay
       infiniteLoop
       swipeable
       emulateTouch
