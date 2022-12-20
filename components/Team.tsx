@@ -2,9 +2,9 @@ import React from "react";
 import team from "../assets/team.png";
 import DemoCarousel from "./DemoCarousel";
 
-const Team = () => {
+const Team = ({ id }: { id: string }) => {
   return (
-    <div className="p-10 text-center">
+    <div className="p-10 text-center" id={id}>
       <img
         src={team.src}
         alt="team"
