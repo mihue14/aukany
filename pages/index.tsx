@@ -14,12 +14,12 @@ export default function Home() {
     <div className="border border-black">
       <NavbarComponent />
       <HomeComponent />
-      <AboutUsComponent />
-      <ScheduleComponent />
-      <TeamComponent />
-      <ServicesComponent />
-      <GalleryComponent />
-      <ContactComponent />
+      <AboutUsComponent id="1" />
+      <ScheduleComponent id="2" />
+      <TeamComponent id="3" />
+      <ServicesComponent id="4" />
+      <GalleryComponent id="5" />
+      <ContactComponent id="6" />
       <FooterComponent />
     </div>
   );
