@@ -2,9 +2,9 @@ import React from "react";
 import { Flathead } from "../fonts";
 import Link from "next/link";
 
-const Contact = () => {
+const Contact = ({ id }: { id: string }) => {
   return (
-    <div>
+    <div id={id}>
       <div className="border border-black mb-10 mt-10"></div>
       <div className="text-center mb-10 lg:w-1/2 lg:mx-auto">
         <span className={`${Flathead.className} text-6xl`}>CONTACO</span>

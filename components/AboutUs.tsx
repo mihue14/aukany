@@ -1,9 +1,9 @@
 import React from "react";
 import { Babang } from "../fonts";
 
-const AboutUs = () => {
+const AboutUs = ({ id }: { id: string }) => {
   return (
-    <div>
+    <div id={id}>
       <h1
         className={`${Babang.className} text-2xl mb-5 mt-5 text-center md:text-4xl`}
       >
