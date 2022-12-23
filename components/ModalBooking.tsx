@@ -57,8 +57,6 @@ const ModalBooking = ({
     });
   }, [input]);
 
-  console.log("🚀 ~ file: ModalBooking.tsx:196 ~ bookings", bookings);
-
   return (
     <Modal
       isOpen={isOpen}
