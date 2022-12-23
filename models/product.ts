@@ -17,15 +17,12 @@ const productSchema = new Schema(
     },
     createdAt: {
       type: String,
-      default: Date.now,
     },
     updatedAt: {
       type: String,
-      default: Date.now,
     },
   },
   {
-    timestamps: true,
     versionKey: false,
   }
 );
