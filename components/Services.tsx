@@ -65,7 +65,7 @@ const Services = ({ id }: { id: string }) => {
         </div>
         <div className="flex justify-between w-5/6 mx-auto">
           <span className={`${Flathead.className} text-white md:text-2xl`}>
-            ARREGLAR DE BARBA + RITUAL TOALLA
+            ARREGLO DE BARBA + RITUAL TOALLA
           </span>
           <span className={`${Flathead.className} text-white md:text-2xl`}>
             $...
