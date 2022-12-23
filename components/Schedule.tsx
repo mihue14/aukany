@@ -15,7 +15,7 @@ const Schedule = ({ id }: { id: string }) => {
         <br />
         09:00hs a 13:00hs
         <br />
-        7:00hs a 21:00hs
+        17:00hs a 21:00hs
       </span>
     </div>
   );
