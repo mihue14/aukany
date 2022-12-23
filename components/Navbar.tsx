@@ -100,7 +100,10 @@ const Navbar = () => {
       >
         CONTACO
       </a>
-      <a className="my-auto p-1 rounded-md bg-white text-black max-md:hidden max-lg:hidden hover:bg-gray-800 hover:text-white transition-all duration-500 cursor-pointer">
+      <a
+        onClick={() => openModal()}
+        className="my-auto p-1 rounded-md bg-white text-black max-md:hidden max-lg:hidden hover:bg-gray-800 hover:text-white transition-all duration-500 cursor-pointer"
+      >
         ¡RESERVAR YA!
       </a>
 
