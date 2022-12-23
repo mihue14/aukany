@@ -18,31 +18,32 @@ const DemoCarouselGallery = () => {
       emulateTouch
       showArrows={false}
       showStatus={false}
+      showIndicators={false}
       interval={2500}
       swipeScrollTolerance={30}
       preventMovementUntilSwipeScrollTolerance
-      className="lg:w-[80%] lg:mx-auto"
+      className="max-w-screen-md h-auto lg:mx-auto"
     >
-      <div className="lg:h-[40em]">
-        <img src={haircut1.src} alt="haircut" className="h-full w-full" />
+      <div>
+        <img src={haircut1.src} alt="haircut" />
       </div>
-      <div className="lg:h-[40em]">
-        <img src={haircut2.src} alt="haircut" className="h-full w-full" />
+      <div>
+        <img src={haircut2.src} alt="haircut" />
       </div>
-      <div className="lg:h-[40em]">
-        <img src={haircut3.src} alt="haircut" className="h-full w-full" />
+      <div>
+        <img src={haircut3.src} alt="haircut" />
       </div>
-      <div className="lg:h-[40em]">
-        <img src={haircut4.src} alt="haircut" className="h-full w-full" />
+      <div>
+        <img src={haircut4.src} alt="haircut" />
       </div>
-      <div className="lg:h-[40em]">
-        <img src={haircut5.src} alt="haircut" className="h-full w-full" />
+      <div>
+        <img src={haircut5.src} alt="haircut" />
       </div>
-      <div className="lg:h-[40em]">
-        <img src={haircut6.src} alt="haircut" className="h-full w-full" />
+      <div>
+        <img src={haircut6.src} alt="haircut" />
       </div>
-      <div className="lg:h-[40em]">
-        <img src={haircut7.src} alt="haircut" className="h-full w-full" />
+      <div>
+        <img src={haircut7.src} alt="haircut" />
       </div>
     </Carousel>
   );

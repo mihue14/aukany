@@ -16,19 +16,20 @@ const DemoCarousel = () => {
       showStatus={false}
       interval={2500}
       swipeScrollTolerance={30}
+      showIndicators={false}
       preventMovementUntilSwipeScrollTolerance
-      className="lg:w-[82.8%] lg:mx-auto"
+      className="max-w-screen-lg h-auto lg:mx-auto mt-10"
     >
-      <div className="lg:h-[45em]">
-        <img src={barber1.src} alt="barber" className="h-full w-full" />
+      <div>
+        <img src={barber1.src} alt="barber" />
         <p className="legend">Lionel Messi - Fundador</p>
       </div>
-      <div className="lg:h-[45em]">
-        <img src={barber2.src} alt="barber" className="h-full w-full" />
+      <div>
+        <img src={barber2.src} alt="barber" />
         <p className="legend">Enzo Fernández - Barbero</p>
       </div>
-      <div className="lg:h-[45em]">
-        <img src={barber3.src} alt="barber" className="h-full w-full" />
+      <div>
+        <img src={barber3.src} alt="barber" />
         <p className="legend">Julián Álvarez - Barbero</p>
       </div>
     </Carousel>
