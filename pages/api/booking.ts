@@ -9,7 +9,7 @@ export default async function bookingApi(
   const { method } = req;
   let perPage = 5;
   let page = Math.max(0, parseInt(req.query.page as string, 10));
-  let { day } = req.query;
+  let { date } = req.query;
 
   dbConnect();
 
@@ -22,8 +22,8 @@ export default async function bookingApi(
           day: "desc",
         });
 
-      if (day) {
-        bookings = await Booking.find({ day: day })
+      if (date) {
+        bookings = await Booking.find({ day: date })
           .limit(perPage)
           .skip(perPage * page)
           .sort({
