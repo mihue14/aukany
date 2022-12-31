@@ -7,7 +7,7 @@ import Profile from "../components/Profile";
 import Swal from "sweetalert2";
 import Filters from "../components/Filters";
 
-const admin = () => {
+const Admin = () => {
   const { data: session } = useSession();
 
   if (session?.user && session.user.email === process.env.NEXT_PUBLIC_ADMIN) {
@@ -47,4 +47,4 @@ const admin = () => {
   }
 };
 
-export default admin;
+export default Admin;
