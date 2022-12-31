@@ -11,7 +11,3 @@ export const pagination = async (page: number) => {
 
   return { name, lastname, service, day, hour };
 };
-
-export const filters = async () => {
-  let { data } = await axios.get(`/api/booking?`);
-};
