@@ -7,16 +7,37 @@ export default async function bookingApi(
   res: NextApiResponse
 ) {
   const { method } = req;
+  let perPage = 5;
+  let page = Math.max(0, parseInt(req.query.page as string, 10));
+  let { day } = req.query;
 
   dbConnect();
 
   if (method === "GET") {
     try {
-      let bookings = await Booking.find();
+      let bookings = await Booking.find()
+        .limit(perPage)
+        .skip(perPage * page)
+        .sort({
+          day: "desc",
+        });
 
-      res
-        .status(200)
-        .json({ message: "Reservas obtenidas con éxito!", bookings });
+      if (day) {
+        bookings = await Booking.find({ day: day })
+          .limit(perPage)
+          .skip(perPage * page)
+          .sort({
+            day: "desc",
+          });
+      }
+
+      let allBookings = await Booking.find();
+
+      res.status(200).json({
+        message: "Reservas obtenidas con éxito!",
+        bookings,
+        allBookings,
+      });
     } catch (err) {
       res.status(500).json(err);
     }
