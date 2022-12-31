@@ -23,7 +23,7 @@ const ModalBooking = ({
   const [input, setInput] = useState({
     name: "",
     lastname: "",
-    service: "",
+    service: "DEFAULT",
     phone: "",
     day: "",
     hour: "",
@@ -33,15 +33,14 @@ const ModalBooking = ({
     e.preventDefault();
     setInput({ ...input, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     await axios.post("/api/booking", input);
     setInput({
       name: "",
       lastname: "",
-      service: "",
-      phone: "",
+      service: "DEFAULT",
+      phone: "+54",
       day: "",
       hour: "",
     });
@@ -108,6 +107,7 @@ const ModalBooking = ({
           <PhoneInput
             country={"ar"}
             onChange={(phone) => setInput({ ...input, phone })}
+            value={input.phone}
             inputStyle={{
               backgroundColor: "rgb(209 213 219)",
               width: "100%",
@@ -127,6 +127,7 @@ const ModalBooking = ({
           <select
             name="service"
             defaultValue={"DEFAULT"}
+            value={input.service}
             className="w-full bg-gray-300 p-2 mb-5 rounded"
             onChange={(e) => setInput({ ...input, service: e.target.value })}
           >
