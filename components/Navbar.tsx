@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import MenuDropdown from "./MenuDropdown";
 import Scroll from "react-scroll";
 import ModalBooking from "./ModalBooking";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -29,6 +30,8 @@ const Navbar = () => {
     });
   };
 
+  const admin = useSession().data?.user;
+
   return (
     <nav
       className={`flex justify-around w-full h-24 z-10 sticky top-0 bg-black ${
@@ -38,12 +41,22 @@ const Navbar = () => {
       {/* MOBILE */}
       <MenuDropdown />
       <img src={logo.src} alt="logo" className="h-auto w-auto lg:hidden" />
-      <a
-        onClick={() => openModal()}
-        className="my-auto text-white p-1 rounded-md bg-black lg:hidden hover:bg-white hover:text-black transition-all duration-500 md:text-xl cursor-pointer"
-      >
-        ¡RESERVAR!
-      </a>
+
+      {admin ? (
+        <a
+          href="/admin"
+          className="my-auto text-white p-1 rounded-md bg-black lg:hidden hover:bg-white hover:text-black transition-all duration-500 md:text-xl cursor-pointer"
+        >
+          ADMIN
+        </a>
+      ) : (
+        <a
+          onClick={() => openModal()}
+          className="my-auto text-white p-1 rounded-md bg-black lg:hidden hover:bg-white hover:text-black transition-all duration-500 md:text-xl cursor-pointer"
+        >
+          ¡RESERVAR!
+        </a>
+      )}
 
       {/* PC */}
       <a
@@ -100,12 +113,22 @@ const Navbar = () => {
       >
         CONTACO
       </a>
-      <a
-        onClick={() => openModal()}
-        className="my-auto p-1 rounded-md bg-white text-black max-md:hidden max-lg:hidden hover:bg-gray-800 hover:text-white transition-all duration-500 cursor-pointer"
-      >
-        ¡RESERVAR YA!
-      </a>
+
+      {admin ? (
+        <a
+          href="/admin"
+          className="my-auto p-1 rounded-md bg-white text-black max-md:hidden max-lg:hidden hover:bg-gray-800 hover:text-white transition-all duration-500 cursor-pointer"
+        >
+          ADMIN
+        </a>
+      ) : (
+        <a
+          onClick={() => openModal()}
+          className="my-auto p-1 rounded-md bg-white text-black max-md:hidden max-lg:hidden hover:bg-gray-800 hover:text-white transition-all duration-500 cursor-pointer"
+        >
+          ¡RESERVAR YA!
+        </a>
+      )}
 
       {/* MODAL */}
       <ModalBooking isOpen={modalIsOpen} isClosed={closeModal} />
