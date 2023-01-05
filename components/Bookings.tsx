@@ -49,7 +49,7 @@ const Bookings = () => {
   };
 
   return (
-    <div className="text-center">
+    <div className="min-h-screen">
       {loading ? (
         <BarLoader
           cssOverride={{
