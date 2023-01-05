@@ -22,28 +22,55 @@ const DemoCarouselGallery = () => {
       interval={2500}
       swipeScrollTolerance={30}
       preventMovementUntilSwipeScrollTolerance
-      className="max-w-screen-md h-auto lg:mx-auto"
     >
       <div>
-        <img src={haircut1.src} alt="haircut" />
+        <img
+          src={haircut1.src}
+          alt="haircut"
+          className="max-w-full max-h-[850px] object-contain h-auto"
+        />
       </div>
       <div>
-        <img src={haircut2.src} alt="haircut" />
+        <img
+          src={haircut2.src}
+          alt="haircut"
+          className="max-w-full max-h-[850px] object-contain h-auto"
+        />
       </div>
       <div>
-        <img src={haircut3.src} alt="haircut" />
+        <img
+          src={haircut3.src}
+          alt="haircut"
+          className="max-w-full max-h-[850px] object-contain h-auto"
+        />
       </div>
       <div>
-        <img src={haircut4.src} alt="haircut" />
+        <img
+          src={haircut4.src}
+          alt="haircut"
+          className="max-w-full max-h-[850px] object-contain h-auto"
+        />
       </div>
       <div>
-        <img src={haircut5.src} alt="haircut" />
+        <img
+          src={haircut5.src}
+          alt="haircut"
+          className="max-w-full max-h-[850px] object-contain h-auto"
+        />
       </div>
       <div>
-        <img src={haircut6.src} alt="haircut" />
+        <img
+          src={haircut6.src}
+          alt="haircut"
+          className="max-w-full max-h-[850px] object-contain h-auto"
+        />
       </div>
       <div>
-        <img src={haircut7.src} alt="haircut" />
+        <img
+          src={haircut7.src}
+          alt="haircut"
+          className="max-w-full max-h-[850px] object-contain h-auto"
+        />
       </div>
     </Carousel>
   );
