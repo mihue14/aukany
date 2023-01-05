@@ -1,7 +1,15 @@
 import { booking } from "./../../utils/booking";
 import axios from "axios";
 import { Dispatch } from "redux";
-import { GET_ALL_BOOKINGS, GET_BOOKINGS, GET_BOOKINGS_BY_DATE } from "../types";
+import {
+  GET_ALL_BOOKINGS,
+  GET_BOOKINGS,
+  GET_BOOKINGS_BY_DATE,
+  GET_BOOKINGS_BY_LASTNAME,
+  GET_BOOKINGS_BY_NAME,
+  GET_BOOKINGS_BY_SERVICE,
+} from "../types";
+import { dateFormate } from "../../utils/date";
 
 export const getAllBookings = () => async (dispatch: Dispatch) => {
   try {
@@ -33,11 +41,39 @@ export const getBookings = (page: number) => async (dispatch: Dispatch) => {
 };
 
 export const getBookingsByDate =
-  (date: string) => async (dispatch: Dispatch) => {
-    date = `${date.split("-")[2]}/${date.split("-")[1]}/${date.split("-")[0]}`;
+  (date: string, name?: string, lastname?: string, service?: string) =>
+  async (dispatch: Dispatch) => {
+    date = dateFormate(date);
 
     return dispatch({
       type: GET_BOOKINGS_BY_DATE,
-      payload: date,
+      payload: { date, name, lastname, service },
+    });
+  };
+
+export const getBookingsByName =
+  (name: string, lastname?: string, date?: string, service?: string) =>
+  async (dispatch: Dispatch) => {
+    return dispatch({
+      type: GET_BOOKINGS_BY_NAME,
+      payload: { name, lastname, date, service },
+    });
+  };
+
+export const getBookingsByLastname =
+  (lastname: string, name?: string, date?: string, service?: string) =>
+  async (dispatch: Dispatch) => {
+    return dispatch({
+      type: GET_BOOKINGS_BY_LASTNAME,
+      payload: { lastname, name, date, service },
+    });
+  };
+
+export const getBookingsByService =
+  (service: string, lastname?: string, name?: string, date?: string) =>
+  async (dispatch: Dispatch) => {
+    return dispatch({
+      type: GET_BOOKINGS_BY_SERVICE,
+      payload: { service, lastname, name, date },
     });
   };
