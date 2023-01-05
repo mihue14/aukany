@@ -8,6 +8,7 @@ import { booking } from "../utils/booking";
 import axios from "axios";
 import { IBookings } from "../interfaces/bookings";
 import Swal from "sweetalert2";
+import { errorAlert, successAlert } from "../utils/alerts";
 
 const ModalBooking = ({
   isOpen,
@@ -19,12 +20,24 @@ const ModalBooking = ({
   isOpen ? disableScroll.on() : disableScroll.off();
 
   let today = new Date().toDateString().split(" ");
+  let hourNumber = new Date().getHours();
+  let minuteNumber = new Date().getMinutes();
+  let hour: string, minute: string;
+
+  if (hourNumber < 10) {
+    hour = "0" + hourNumber.toString();
+  }
+
+  if (minuteNumber < 10) {
+    minute = "0" + minuteNumber.toString();
+  }
+
   const [bookings, setBookings] = useState<any>([]);
 
   const [input, setInput] = useState({
     name: "",
     lastname: "",
-    service: "DEFAULT",
+    service: "",
     phone: "",
     day: "",
     hour: "",
@@ -36,21 +49,17 @@ const ModalBooking = ({
   };
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (input.hour < `${hour}:${minute}`) return errorAlert();
     await axios.post("/api/booking", input);
     setInput({
       name: "",
       lastname: "",
-      service: "DEFAULT",
-      phone: "+54",
+      service: "",
+      phone: "",
       day: "",
       hour: "",
     });
-    Swal.fire({
-      icon: "success",
-      title: "¡Su turno fue reservado!",
-      showConfirmButton: true,
-      timer: 3000,
-    });
+    successAlert();
     isClosed();
   };
 
@@ -92,102 +101,128 @@ const ModalBooking = ({
       <div className="mt-20 lg:mt-">
         <form onSubmit={handleSubmit}>
           {/* NOMBRE */}
-          <input
-            value={input.name}
-            name="name"
-            onChange={handleChange}
-            type="text"
-            placeholder="Nombre"
-            className="w-full bg-gray-300 p-2 mb-5 rounded"
-          />
+          <div className="mb-5">
+            <input
+              value={input.name}
+              name="name"
+              onChange={handleChange}
+              type="text"
+              placeholder="Nombre"
+              className="w-full bg-gray-300 p-2 rounded peer border border-slate-400"
+              required
+            />
+            <p className="invisible peer-invalid:visible text-red-600 font-bold">
+              Ingrese su nombre por favor.
+            </p>
+          </div>
 
           {/* APELLIDO */}
-          <input
-            value={input.lastname}
-            name="lastname"
-            onChange={handleChange}
-            type="text"
-            placeholder="Apellido"
-            className="w-full bg-gray-300 p-2 mb-5 rounded"
-          />
+          <div className="mb-5">
+            <input
+              value={input.lastname}
+              name="lastname"
+              onChange={handleChange}
+              type="text"
+              placeholder="Apellido"
+              className="w-full bg-gray-300 p-2 rounded peer border border-slate-400"
+              required
+            />
+            <p className="invisible peer-invalid:visible text-red-600 font-bold">
+              Ingrese su apellido por favor.
+            </p>
+          </div>
 
           {/* CELULAR */}
-          <PhoneInput
-            country={"ar"}
-            onChange={(phone) => setInput({ ...input, phone })}
-            value={input.phone}
-            inputStyle={{
-              backgroundColor: "rgb(209 213 219)",
-              width: "100%",
-              minHeight: "40px",
-            }}
-            buttonStyle={{
-              backgroundColor: "rgb(209 213 219)",
-            }}
-            containerStyle={{
-              marginBottom: "1.25rem",
-              borderRadius: "0.25rem",
-              minHeight: "40px",
-            }}
-          />
+          <div className="mb-5">
+            <input
+              value={input.phone}
+              name="phone"
+              onChange={handleChange}
+              type="number"
+              placeholder="+54 (000)-0000000"
+              className="w-full bg-gray-300 p-2 rounded peer border border-slate-400"
+              required
+            />
+            <p className="invisible peer-invalid:visible text-red-600 font-bold">
+              Ingre su número de teléfono por favor.
+            </p>
+          </div>
 
           {/* SERVICIO */}
-          <select
-            name="service"
-            defaultValue={"DEFAULT"}
-            value={input.service}
-            className="w-full bg-gray-300 p-2 mb-5 rounded"
-            onChange={(e) => setInput({ ...input, service: e.target.value })}
-          >
-            <option value="DEFAULT" disabled>
-              SERVICIO
-            </option>
-            <optgroup label="CABELLO">
-              <option value="CORTE">CORTE</option>
-              <option value="COLOR">COLOR</option>
-              <option value="CORTE + COLOR">CORTE + COLOR</option>
-            </optgroup>
-            <optgroup label="BARBA">
-              <option value="ARREGLO DE BARBA">ARREGLO DE BARBA</option>
-              <option value="ARREGLO DE BARBA + RITUAL TOALLA">
-                ARREGLO DE BARBA + RITUAL TOALLA
+          <div className="mb-5">
+            <select
+              name="service"
+              value={input.service}
+              className="w-full bg-gray-300 p-2 rounded peer border border-slate-400"
+              onChange={(e) => setInput({ ...input, service: e.target.value })}
+              required
+            >
+              <option value="" disabled selected>
+                SERVICIO
               </option>
-              <option value="AFEITADO">AFEITADO</option>
-            </optgroup>
-          </select>
+              <optgroup label="CABELLO">
+                <option value="CORTE">CORTE</option>
+                <option value="COLOR">COLOR</option>
+                <option value="CORTE + COLOR">CORTE + COLOR</option>
+              </optgroup>
+              <optgroup label="BARBA">
+                <option value="ARREGLO DE BARBA">ARREGLO DE BARBA</option>
+                <option value="ARREGLO DE BARBA + RITUAL TOALLA">
+                  ARREGLO DE BARBA + RITUAL TOALLA
+                </option>
+                <option value="AFEITADO">AFEITADO</option>
+              </optgroup>
+            </select>
+            <p className="invisible peer-invalid:visible text-red-600 font-bold">
+              Ingre su número de teléfono por favor.
+            </p>
+          </div>
 
           {/* DÍA */}
-          <input
-            type="date"
-            name="day"
-            value={input.day}
-            onChange={handleChange}
-            min={`${today[3]}-${new Date().getMonth() + 1}-${today[2]}`}
-            className="w-full bg-gray-300 p-2 mb-5 rounded"
-          />
+          <div className="mb-5">
+            <input
+              type="date"
+              name="day"
+              value={input.day}
+              onChange={handleChange}
+              min={`${today[3]}-${
+                new Date().getMonth() + 1 === 1 ? "01" : null
+              }-${today[2]}`}
+              className="w-full bg-gray-300 p-2 rounded peer border border-slate-400"
+              required
+            />
+            <p className="invisible peer-invalid:visible text-red-600 font-bold">
+              Ingre su número de teléfono por favor.
+            </p>
+          </div>
 
           {/* HORA */}
-          <select
-            defaultValue={"Default"}
-            value={input.hour}
-            onChange={(e) => setInput({ ...input, hour: e.target.value })}
-            className="w-full bg-gray-300 p-2 mb-5 rounded horario"
-          >
-            <option value="Default" disabled>
-              HORARIO
-            </option>
-            {booking(input.day, bookings).map((element, index) => {
-              return element.length < 6 ? (
-                <option value={element} key={index}>
-                  {element}
-                </option>
-              ) : (
-                <option value={element} disabled key={index}>
-                  {element}
-                </option>
-              );
-            })}
-          </select>
+          <div className="mb-5">
+            <select
+              value={input.hour}
+              onChange={(e) => setInput({ ...input, hour: e.target.value })}
+              className="w-full bg-gray-300 p-2 rounded peer border border-slate-400"
+              required
+            >
+              <option value="" selected disabled>
+                HORARIO
+              </option>
+              {booking(input.day, bookings).map((element, index) => {
+                return element.length < 6 ? (
+                  <option value={element} key={index}>
+                    {element}
+                  </option>
+                ) : (
+                  <option value={element} disabled key={index}>
+                    {element}
+                  </option>
+                );
+              })}
+            </select>
+            <p className="invisible peer-invalid:visible text-red-600 font-bold">
+              Ingre su número de teléfono por favor.
+            </p>
+          </div>
 
           {/* RESERVAR  */}
           <button
