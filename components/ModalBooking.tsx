@@ -7,6 +7,7 @@ import disableScroll from "disable-scroll";
 import { booking } from "../utils/booking";
 import axios from "axios";
 import { IBookings } from "../interfaces/bookings";
+import Swal from "sweetalert2";
 
 const ModalBooking = ({
   isOpen,
@@ -44,6 +45,13 @@ const ModalBooking = ({
       day: "",
       hour: "",
     });
+    Swal.fire({
+      icon: "success",
+      title: "¡Su turno fue reservado!",
+      showConfirmButton: true,
+      timer: 3000,
+    });
+    isClosed();
   };
 
   useEffect(() => {
