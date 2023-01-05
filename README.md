@@ -22,14 +22,14 @@
 * La hora que necesita la cita.
 
 **Formulario con validaciónes**
-![DEMO](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672891970/b99ppnsiubphnyjajkjn.png)
+![DEMO](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672898567/ujatmr2tbhupkqmbp2j1.png)
 
-**Días y horas ya reservados no se pueden seleccionar**
+**Días y horas ya reservadas no se pueden seleccionar**
 ![DEMO](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672886699/hjinvxj3itiovxpgrhoq.png)
 
 ## Admin Dashboard
 Solamente la cuenta de administrador puede acceder a esta ruta.
-![DEMO](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672893696/qbmrwpyylhbjyopklsya.png)
+![ADMIN](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672898300/gkmjurfm1cludqcxlk2b.png)
 
 ### El administador puede observar las reservas realizadas, donde tiene la informacion de:
 * Nombre.
@@ -39,4 +39,4 @@ Solamente la cuenta de administrador puede acceder a esta ruta.
 * El día reservado.
 * La hora reservada.
 
-### El administrador puede filtrar las reservas por el nombre, apellido, número de teléfono, el servicio que solicitó y el día que reservó la persona. (Los filtros pueden ser combinados)
+**El administrador puede filtrar las reservas por el nombre, apellido, número de teléfono, el servicio que solicitó y el día que reservó la persona. (Los filtros pueden ser combinados)**
