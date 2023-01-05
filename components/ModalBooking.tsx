@@ -144,7 +144,7 @@ const ModalBooking = ({
               required
             />
             <p className="invisible peer-invalid:visible text-red-600 font-bold">
-              Ingre su número de teléfono por favor.
+              Ingrese su número de teléfono por favor.
             </p>
           </div>
 
@@ -174,7 +174,7 @@ const ModalBooking = ({
               </optgroup>
             </select>
             <p className="invisible peer-invalid:visible text-red-600 font-bold">
-              Ingre el servicio por favor.
+              Ingrese el servicio por favor.
             </p>
           </div>
 
@@ -192,7 +192,7 @@ const ModalBooking = ({
               required
             />
             <p className="invisible peer-invalid:visible text-red-600 font-bold">
-              Ingre el día por favor.
+              Ingrese el día por favor.
             </p>
           </div>
 
@@ -220,7 +220,7 @@ const ModalBooking = ({
               })}
             </select>
             <p className="invisible peer-invalid:visible text-red-600 font-bold">
-              Ingre la hora por favor.
+              Ingrese la hora por favor.
             </p>
           </div>
 
