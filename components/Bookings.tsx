@@ -69,7 +69,11 @@ const Bookings = () => {
               <span className="font-bold">Nombre</span>
               {currentBookings.length > 0 &&
                 currentBookings.map((n: IBookings, index) => {
-                  return <div key={index}>{n.name}</div>;
+                  return (
+                    <div key={index} className="my-4">
+                      {n.name}
+                    </div>
+                  );
                 })}
             </div>
 
@@ -77,7 +81,11 @@ const Bookings = () => {
               <span className="font-bold">Apellido</span>
               {currentBookings.length > 0 &&
                 currentBookings.map((l: IBookings, index) => {
-                  return <div key={index}>{l.lastname}</div>;
+                  return (
+                    <div key={index} className="my-4">
+                      {l.lastname}
+                    </div>
+                  );
                 })}
             </div>
 
@@ -85,7 +93,11 @@ const Bookings = () => {
               <span className="font-bold">Celular</span>
               {currentBookings.length > 0 &&
                 currentBookings.map((p: IBookings, index) => {
-                  return <div key={index}>+{p.phone}</div>;
+                  return (
+                    <div key={index} className="my-4">
+                      +{p.phone}
+                    </div>
+                  );
                 })}
             </div>
 
@@ -93,7 +105,11 @@ const Bookings = () => {
               <span className="font-bold">Servicio</span>
               {currentBookings.length > 0 &&
                 currentBookings.map((s: IBookings, index) => {
-                  return <div key={index}>{s.service}</div>;
+                  return (
+                    <div key={index} className="my-4">
+                      {s.service}
+                    </div>
+                  );
                 })}
             </div>
 
@@ -101,7 +117,11 @@ const Bookings = () => {
               <span className="font-bold">Días</span>
               {currentBookings.length > 0 &&
                 currentBookings.map((d: IBookings, index) => {
-                  return <div key={index}>{d.day}</div>;
+                  return (
+                    <div key={index} className="my-4">
+                      {d.day}
+                    </div>
+                  );
                 })}
             </div>
 
@@ -109,7 +129,11 @@ const Bookings = () => {
               <span className="font-bold">Hora</span>
               {currentBookings.length > 0 &&
                 currentBookings.map((h: IBookings, index) => {
-                  return <div key={index}>{h.hour}</div>;
+                  return (
+                    <div key={index} className="my-4">
+                      {h.hour}
+                    </div>
+                  );
                 })}
             </div>
           </div>
@@ -121,7 +145,7 @@ const Bookings = () => {
                 return (
                   <div
                     key={index}
-                    className="border rounded-lg border-black p-2 my-5"
+                    className="border rounded-lg border-black p-2 my-4"
                   >
                     <span className="font-bold">Nombre: </span>
                     {elem.name}
