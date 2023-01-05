@@ -11,5 +11,32 @@
 
 
 
-### Cuenta con la opción de poder reservar un turno de manera ¡Online!.
-![DEMO](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672886332/p2fgdyzyzkejref43ky0.png)
+## Cuenta con la opción de poder reservar un turno de manera ¡Online!.
+![DEMO](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672886453/p2fgdyzyzkejref43ky0.png)
+### El usuario debe rellenar los campos con su:
+* Nombre.
+* Apellido.
+* Número de teléfono.
+* El servicio que necesita.
+* El día que necesita la cita.
+* La hora que necesita la cita.
+
+**Formulario con validaciónes**
+![DEMO](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672891970/b99ppnsiubphnyjajkjn.png)
+
+**Días y horas ya reservados no se pueden seleccionar**
+![DEMO](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672886699/hjinvxj3itiovxpgrhoq.png)
+
+## Admin Dashboard
+Solamente la cuenta de administrador puede acceder a esta ruta.
+![DEMO](https://res.cloudinary.com/dr1vf8gcc/image/upload/v1672893696/qbmrwpyylhbjyopklsya.png)
+
+### El administador puede observar las reservas realizadas, donde tiene la informacion de:
+* Nombre.
+* Apellido.
+* Número de teléfono.
+* El servicio reservado.
+* El día reservado.
+* La hora reservada.
+
+### El administrador puede filtrar las reservas por el nombre, apellido, número de teléfono, el servicio que solicitó y el día que reservó la persona. (Los filtros pueden ser combinados)
